@@ -1,38 +1,34 @@
-import React, {useState,useEffect} from 'react';
-import {
-  Box,
-} from '@chakra-ui/react';
+import {BrowserRouter as Router , Routes ,Route} from 'react-router-dom';
+import Header from './components/Header';
 import Home from './pages/Home';
-import NavBar from './components/NavBar';
-import Investment from './pages/Investment';
-import Testimonials from './pages/Testimonials';
-import About from './pages/About';
-import Loading  from './components/Loading';
+import Coins from './components/Coins';
+import Dashboard from './pages/UserProfile/Dashboard';
+import CoinDetails from './components/CoinDetails';
+import Exchanges from './components/Exchanges.jsx';
+import Statistics from './pages/UserProfile/Statistics';
 
 
 function App() {
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 6000)
-  }, [])
-
   return (
-    <>
-    {loading === false ? (
-      
-    <Box>
-    <NavBar/>
-    <Home/>
-    <About/>
-     <Investment/>
-     <Testimonials/>
-    </Box>
-    ) : (
-        <Loading />
-      )}
+    <div className="App">
+      <Router>
 
-    </>
+          <Header />
+
+              <Routes>
+
+                <Route path='/' element = {< Home />}/>
+                <Route path='/dash' element = {< Dashboard />}/>
+                <Route path='/stats' element = {< Statistics />}/>
+                <Route path='/coins' element = {<Coins />}/>
+                <Route path='/exchanges' element = {< Exchanges />}/>
+                <Route path='/coin/:id' element = {<CoinDetails />}/>
+
+              </Routes>
+ 
+              
+          </Router>
+    </div>
   );
 }
 

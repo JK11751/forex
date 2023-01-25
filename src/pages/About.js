@@ -9,6 +9,7 @@ import {
     StackDivider,
     Icon,
     useColorModeValue,
+    Button,
   } from '@chakra-ui/react';
   import {
     IoAnalyticsSharp,
@@ -40,21 +41,14 @@ import {
       <Container maxW={'5xl'} py={12}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={4}>
-            <Text
-              textTransform={'uppercase'}
-              color={'blue.400'}
-              fontWeight={600}
-              fontSize={'sm'}
-              bg={useColorModeValue('blue.50', 'blue.900')}
-              p={2}
-              alignSelf={'flex-start'}
-              rounded={'md'}>
-              Our Story
-            </Text>
-            <Heading>A digital Product design agency</Heading>
+            <Heading>
+              About Us
+            </Heading>
             <Text color={'gray.500'} fontSize={'lg'}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore
+            We provide the best Investment profitability return with our carefully prepared and time tested investment strategy.
+
+            We indulge in Cryptocurrency trading. Our trading team consists of highly qualified traders, analytical experts who by using their experience and are able to predict the movements in the market with best accuracy.
+            Global Trades Limited has achieved and occupied a stable position in the financial market and won the confidence of numerous investors from all over the world. Global Trades Limited aims to deliver a complete and professional service aimed at meeting the highest requirement of our clients. Our high standards can be verified by the increasing numbers of long-standing clients.
             </Text>
             <Stack
               spacing={4}
@@ -83,6 +77,9 @@ import {
                 text={'Market Analysis'}
               />
             </Stack>
+            <Button bgColor={'red'} textColor={'white'}>
+              Get Started
+            </Button>
           </Stack>
           <Flex>
             <Image

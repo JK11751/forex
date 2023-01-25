@@ -1,59 +1,26 @@
-import {
-  Box,
-  Heading,
-  Container,
-  Text,
-  Button,
-  Stack,
-} from '@chakra-ui/react';
+import { Box, Image, Text } from "@chakra-ui/react";
+import React from "react";
+//import btcSrc from '../assets/btc.png';
+import About from './About'
+import Investiment from './Investment'
+import {motion} from "framer-motion";
+import Statistics from "./UserProfile/Statistics";
+//import Us from "./Us";
 
-const Home=()=>{
-  return (
-    <>
+const Home = ()=>{
+    return(
+        
+        <Box h={'74vh'} w={'full'} bgColor={'gray.200'}  >
 
-      <Container maxW={'3xl'}>
-        <Stack
-          as={Box}
-          textAlign={'center'}
-          spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}>
-            Make money from <br />
-            <Text as={'span'} color={'green.400'}>
-              your audience
-            </Text>
-          </Heading>
-          <Text color={'gray.500'}>
-            Monetize your content by charging your most loyal readers and reward
-            them loyalty points. Give back to your loyal readers by granting
-            them access to your pre-releases and sneak-peaks.
-          </Text>
-          <Stack
-            direction={'column'}
-            spacing={3}
-            align={'center'}
-            alignSelf={'center'}
-            position={'relative'}>
-            <Button
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: 'green.500',
-              }}>
-              Get Started
-            </Button>
-            <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-              Learn more
-            </Button>
-          </Stack>
-        </Stack>
-      </Container>
-    </>
-  );
+        <Box pt={80}>
+        <Statistics/>
+        </Box>
+        <Box pt={20}>
+        <About/>
+        </Box>
+        <Investiment/>
+        </Box>
+    )
 }
-export default Home; 
+
+export default Home;

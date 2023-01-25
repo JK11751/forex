@@ -33,12 +33,8 @@ const  Investment=()=>{
     <Box py={12}>
       <VStack spacing={2} textAlign="center">
         <Heading as="h1" fontSize="4xl">
-          Plans that fit your need
+          Investiment Plans
         </Heading>
-        <Text fontSize="lg" color={'gray.500'}>
-          Start with 14-day free trial. No credit card needed. Cancel at
-          anytime.
-        </Text>
       </VStack>
       <Stack
         direction={{ base: 'column', md: 'row' }}
@@ -48,7 +44,7 @@ const  Investment=()=>{
         py={10}>
         <PriceWrapper>
           <Box py={4} px={12}>
-            <Text fontWeight="500" fontSize="2xl">
+            <Text fontWeight="500" textColor={"white"} fontSize="2xl" bgColor={'red'} borderRadius={'md'}>
               Hobby
             </Text>
             <HStack justifyContent="center">
@@ -83,7 +79,7 @@ const  Investment=()=>{
             </List>
             <Box w="80%" pt={7}>
               <Button w="full" colorScheme="red" variant="outline">
-                Start trial
+              Get Started
               </Button>
             </Box>
           </VStack>
@@ -109,7 +105,7 @@ const  Investment=()=>{
               </Text>
             </Box>
             <Box py={4} px={12}>
-              <Text fontWeight="500" fontSize="2xl">
+              <Text fontWeight="500" textColor={"white"} fontSize="2xl" bgColor={'red'} borderRadius={'md'}>
                 Growth
               </Text>
               <HStack justifyContent="center">
@@ -152,7 +148,7 @@ const  Investment=()=>{
               </List>
               <Box w="80%" pt={7}>
                 <Button w="full" colorScheme="red">
-                  Start trial
+                  Get Started
                 </Button>
               </Box>
             </VStack>
@@ -160,7 +156,7 @@ const  Investment=()=>{
         </PriceWrapper>
         <PriceWrapper>
           <Box py={4} px={12}>
-            <Text fontWeight="500" fontSize="2xl">
+            <Text fontWeight="500" textColor={"white"} fontSize="2xl" bgColor={'red'} borderRadius={'md'}>
               Scale
             </Text>
             <HStack justifyContent="center">
@@ -195,7 +191,7 @@ const  Investment=()=>{
             </List>
             <Box w="80%" pt={7}>
               <Button w="full" colorScheme="red" variant="outline">
-                Start trial
+              Get Started
               </Button>
             </Box>
           </VStack>

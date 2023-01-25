@@ -1,5 +1,5 @@
 import React from 'react'
-import { Center, Spinner } from '@chakra-ui/react'
+import { Center, Spinner,Text } from '@chakra-ui/react'
 
  const Loading = () => {
     return (
@@ -10,6 +10,7 @@ import { Center, Spinner } from '@chakra-ui/react'
                 emptyColor="gray.200"
                 color="blue.500"
                 size="xl"/>
+                <Text>fetching...</Text>
         </Center>
     )
 }
