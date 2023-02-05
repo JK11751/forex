@@ -26,36 +26,79 @@ const Header =()=>{
         </HStack>
 
         <HStack justifyContent={'space-around'} 
-         transition ={"all 0.3s"}  css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-            }
-          }} 
+         transition ={"all 0.3s"} 
           >
 
             <Button variant={'unstyled'} color={'rgb(252,211,76)'} mr={'1'} transition ={"all 0.1s"} css={{
             "&:hover":{
               transform :"scale(1.1)",
+              textDecoration: "underline"
             }
           }} >
                 <Link to="/" >Home</Link>
             </Button>
-
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} mr={'1' } transition ={"all 0.1s"}  css={{
+            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
             "&:hover":{
               transform :"scale(1.1)",
+              textDecoration: "underline"
+            }
+          }}>
+                <Link to='/about'>About </Link>
+            </Button>
+
+            
+
+            
+            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
+            "&:hover":{
+              transform :"scale(1.1)",
+              textDecoration: "underline"
+            }
+          }}>
+                <Link to='/faq'>Faq</Link>
+            </Button>
+            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
+            "&:hover":{
+              transform :"scale(1.1)",
+              textDecoration: "underline"
+            }
+          }}>
+                <Link to='/privacy'>Privacy Policy</Link>
+            </Button>
+            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
+            "&:hover":{
+              transform :"scale(1.1)",
+              textDecoration: "underline",
+              
             }
           }}>
                 <Link to='/exchanges'>Exchanges</Link>
             </Button>
-
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} mr={'1' } transition ={"all 0.1s"} css={{
+            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"} css={{
             "&:hover":{
               transform :"scale(1.1)",
+              textDecoration: "underline"
             }
           }}>
                 <Link to='/coins'>Coins</Link>
             </Button>
+            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
+            "&:hover":{
+              transform :"scale(1.1)",
+              textDecoration: "underline"
+            }
+          }}>
+                <Link to='/login'>Login</Link>
+            </Button>
+            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
+            "&:hover":{
+              transform :"scale(1.1)",
+              textDecoration: "underline"
+            }
+          }}>
+                <Link to='/register'>Create Account</Link>
+            </Button>
+           
         </HStack>
 
         </Stack>
