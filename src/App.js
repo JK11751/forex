@@ -15,7 +15,7 @@ import Contact from './pages/Contact/Contact';
 import Sidebar from './components/PageComponents/Sidebar';
 import Layout from './components/Layout/Layout';
 import Referral from './pages/Dashboard/Referrals';
-import Content from './pages/Dashboard/History/Content';
+//import Content from './pages/Dashboard/History/Content';
 import DepositHistory from './pages/Dashboard/History/DepositHistory';
 import HIstoryLayout from './components/Layout/HistoryLayout';
 import WithdrawalHistory from './pages/Dashboard/History/WithdrawalHistory';
