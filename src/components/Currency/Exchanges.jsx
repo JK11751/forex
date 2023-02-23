@@ -1,9 +1,9 @@
 import { Container, HStack, VStack ,Image, Heading ,Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { server } from '..';
+import { server } from "../../constants/api";
 import ErrorComponent from './ErrorComponent';
-import Loading from './Loading';
+import Loading from '../Loading/Loading';
 
 
 
@@ -57,13 +57,8 @@ const Exchanges = () => {
             w={'full'}
             p={'4'}
             fontSize={'2xl'}
-            borderBottom = {'8px'}
+
             >
-             <Text textAlign={'center'}
-             w={'full'}
-             >
-               See crypto exchanges ranking with their trust score
-              </Text> 
               
             </HStack>
             <HStack flexWrap={'wrap'} justifyContent={'space-evenly'} >

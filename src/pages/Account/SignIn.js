@@ -1,55 +1,93 @@
 import { useState } from 'react';
+import { HiOutlineMail } from "react-icons/hi";
+import { BiLockAlt } from "react-icons/bi";
+import { BiShowAlt, BiHide } from "react-icons/bi";
 import {
   Button,
   Checkbox,
   Flex,
+  Divider,
   Box,
   Text,
   InputGroup,
   InputRightElement,
   FormControl,
-  FormLabel,
-  Heading,
   Input,
   Link,
   Stack,
 } from '@chakra-ui/react';
+import {IconButton } from "@chakra-ui/button";
+import {
+  InputLeftElement,
+} from "@chakra-ui/input";
 import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
     const navigate= useNavigate();
     const [show, setShow] = useState(false)
     const handleClick = () => setShow(!show)
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+
   return (
-    <Box p={2} bg={'gray.50'}>
-      <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-        <Flex p={8} flex={1} align={'center'} justify={'center'}>
-          <Stack spacing={4} w={'full'} maxW={'md'}>
-            <Heading fontSize={'2xl'}>Sign in to your account</Heading>
-            <FormControl id="email" pt={8}>
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" placeholder='Enter your email' value={email}
-          onChange={(e) => setEmail(e.target.value)} />
-            </FormControl>
-            <FormControl id="password">
-              <FormLabel>Password</FormLabel>
-              <InputGroup size="md">
-                <Input
-                  pr="4.5rem"
-                  type={show ? 'text' : 'password'}
-                  placeholder="Enter password"
-                  value={password}
-          onChange={(e) => setPassword(e.target.value)}
-                />
-                <InputRightElement width="4.5rem">
-                  <Button h="1.75rem" size="sm" onClick={handleClick}>
-                    {show ? 'Hide' : 'Show'}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-            </FormControl>
+    <Box >
+      <Stack spacing="15px" pl={20} pr={20} pt={4} pb={4}>
+        <Flex >
+          <Stack spacing={4} w={'full'} >
+            <Text align="center" fontSize="4xl" mt={7}>Sign in to your account</Text>
+            <Divider color="#000000" orientation="horizontal" />
+            <FormControl id="email" isRequired>
+          <InputGroup>
+            <InputLeftElement
+              pointerEvents="none"
+              children={<HiOutlineMail color="gray.300" />}
+            />
+            <Input
+              variant="filled"
+              size="md"
+              placeholder="Enter Email Address"
+              type="email"
+             
+            />
+          </InputGroup>
+         
+        </FormControl>
+        <FormControl id="password" isRequired>
+          <InputGroup>
+            <InputLeftElement
+              pointerEvents="none"
+              children={<BiLockAlt color="gray.300" />}
+            />
+            <Input
+              variant="filled"
+              pr="4.5rem"
+              type={show ? "text" : "password"}
+              placeholder="Enter password"
+              size="md"
+              
+              
+            />
+            <InputRightElement width="4.5rem">
+              {show ? (
+                <IconButton
+                  as={BiShowAlt}
+                  variant="unstyled"
+                  h={5}
+                  w={5}
+                  onClick={handleClick}
+                ></IconButton>
+              ) : (
+                <IconButton
+                  as={BiHide}
+                  h={5}
+                  w={5}
+                  variant="unstyled"
+                  onClick={handleClick}
+                ></IconButton>
+              )}
+            </InputRightElement>
+          </InputGroup>
+          
+        </FormControl>
+        
             <Stack spacing={6}>
               <Stack
                 direction={{ base: 'column', sm: 'row' }}
@@ -59,7 +97,7 @@ const SignIn = () => {
                 <Checkbox>Remember me</Checkbox>
                 <Link color={'blue.500'}onClick={() => navigate("/forgotpassword")}>Forgot password?</Link>
               </Stack>
-              <Button colorScheme={'blue'} variant={'solid'}onClick={() => navigate("/dashboard")}  >
+              <Button colorScheme={'blue'} variant={'solid'} onClick={() => navigate("/dashboard")}  >
                 Sign in
               </Button>
               <Button  >

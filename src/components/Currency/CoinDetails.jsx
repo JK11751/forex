@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { server } from "..";
+import { server } from "../../constants/api";
 import { useParams } from "react-router-dom";
 import ErrorComponent from "./ErrorComponent";
 import { Badge, Box, Button, Container, HStack, Image, Progress, Radio, RadioGroup, Stat, StatArrow, StatHelpText, StatLabel, StatNumber, Text, VStack } from "@chakra-ui/react";
-import Loader from "./Loader";
-import Chart from "../components/Chart";
+import Loader from "../Loading/Loader";
+import Chart from "./Chart";
 
 
 

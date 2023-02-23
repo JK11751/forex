@@ -1,11 +1,11 @@
 import { Button, Container, HStack, Radio, RadioGroup, Text } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState }  from "react";
-import { server } from "..";
+import { server } from "../../constants/api";
 import CoinsCart from "./CoinsCart";
 import ErrorComponent from "./ErrorComponent";
 //import Loader from "./Loader";
-import Loading from "./Loading";
+import Loading from "../Loading/Loading";
 
 
 
@@ -16,7 +16,7 @@ const Coins =()=>{
     const[currency, setCurrency] = useState("inr");
     const[page,setPage] = useState(1);
 
-    const currencySymbol = (currency === "inr") ? "₹" : (currency === "eur") ? "€"  : "$" ;
+    const currencySymbol = (currency === "eur") ? "€"  : "$" ;
 
 
     // i am creating total 132 button here 
@@ -70,20 +70,13 @@ const Coins =()=>{
             w={'full'}
             p={'4'}
             fontSize={'2xl'}
-            borderBottom = {'8px'}
             >
-             <Text textAlign={'center'}
-             w={'full'}
-             >
-               Get real-time market data for cryptocurrencies
-              </Text> 
               </HStack>
             
 
                 <RadioGroup p={'4'} value= {currency} onChange={setCurrency} padding = {'8'}   >
                 <HStack spacing={'4'} fontSize={'xl'} >
                     <Text>{`Change Currency > `} </Text>
-                    <Radio value={'inr'} >{`₹ INR`}</Radio>
                     <Radio value={'eur'} >{`€ EUR`}</Radio>
                     <Radio value={'usd'} >{`$ USD`}</Radio>
                 </HStack>
@@ -113,7 +106,7 @@ const Coins =()=>{
             <HStack w={'full'} overflowX={'auto'} p={'8'} >
                      
                  {btns.map((item,index)=>{
-                    return  <Button  bg={'blackAlpha.900'} color={'rgb(252,211,76)'} onClick = {()=>{changePage(index+1)}} key = {index}  > {index+1} </Button>
+                    return  <Button  bg={'gray.900'} color={'rgb(252,211,76)'} onClick = {()=>{changePage(index+1)}} key = {index}  > {index+1} </Button>
 
                 })}  
             </HStack>
