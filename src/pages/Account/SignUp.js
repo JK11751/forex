@@ -1,175 +1,127 @@
-import { FormControl } from "@chakra-ui/react";
-import {
-  Input,
-  InputGroup,
-  InputRightElement,
-  InputLeftElement,
-} from "@chakra-ui/input";
 import { useState } from "react";
-import { Button, IconButton } from "@chakra-ui/button";
 import {
-  Box,
-  VStack,
-  Text,
-  HStack,
-  Stack,
-  Divider,
   Flex,
-} from "@chakra-ui/layout";
-import { HiOutlineMail, HiPhone } from "react-icons/hi";
-import { IoIosPerson } from "react-icons/io";
-import { BiLockAlt } from "react-icons/bi";
-import { Checkbox } from "@chakra-ui/checkbox";
-import { BiShowAlt, BiHide } from "react-icons/bi";
+  Heading,
+  Input,
+  Button,
+  InputGroup,
+  Stack,
+  InputLeftElement,
+  chakra,
+  Box,
+  Link,
+  Avatar,
+  FormControl,
+  FormHelperText,
+  InputRightElement
+} from "@chakra-ui/react";
+import { FaUserAlt, FaLock,FaPhoneAlt } from "react-icons/fa";
 
-
+const CFaUserAlt = chakra(FaUserAlt);
+const CFaLock = chakra(FaLock);
+const CFaPhoneAltock = chakra(FaPhoneAlt);
 
 const SignUp = () => {
-  
+  const [showPassword, setShowPassword] = useState(false);
 
-  const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
+  const handleShowClick = () => setShowPassword(!showPassword);
 
   return (
-
-    <Flex flexDirection="column">
-      <Text align="center" fontSize="4xl" mt={7}>
-        Create an Account
-      </Text>
-      <HStack alignSelf="center" mt={3} mb={3}>
-        
-      </HStack>
-      <Stack direction="row" alignItems="center" pr={4} pl={4}>
-        <Divider color="#000000" orientation="horizontal" />
-        <Text alignSelf="center" fontWeight="500" p={2}>
-          OR
-        </Text>
-        <Divider orientation="horizontal" />
-      </Stack>
-      <Text align="center" fontSize="md">
-        sign up with your email address
-      </Text>
-      <VStack spacing="15px" pl={20} pr={20} pt={4} pb={4}>
-        <FormControl id="username" isRequired>
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              children={<IoIosPerson h={4} w={4} color="gray.300" />}
-            />
-            <Input
-              variant="filled"
-              size="md"
-              placeholder="Username"
-              type="text"
-             
-            />
-          </InputGroup>
-          
-        </FormControl>
-        <FormControl id="email" isRequired>
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              children={<HiOutlineMail color="gray.300" />}
-            />
-            <Input
-              variant="filled"
-              size="md"
-              placeholder="Enter Email Address"
-              type="email"
-             
-            />
-          </InputGroup>
-         
-        </FormControl>
-        <FormControl id="phone_number" isRequired>
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              children={<HiPhone color="gray.300" />}
-            />
-            <Input
-              variant="filled"
-              size="md"
-              placeholder="Enter your phone number"
-              type="text"
-              
-            />
-          </InputGroup>
-         
-        </FormControl>
-        <FormControl id="password" isRequired>
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              children={<BiLockAlt color="gray.300" />}
-            />
-            <Input
-              variant="filled"
-              pr="4.5rem"
-              type={show ? "text" : "password"}
-              placeholder="Enter password"
-              size="md"
-              
-              
-            />
-            <InputRightElement width="4.5rem">
-              {show ? (
-                <IconButton
-                  as={BiShowAlt}
-                  variant="unstyled"
-                  h={5}
-                  w={5}
-                  onClick={handleClick}
-                ></IconButton>
-              ) : (
-                <IconButton
-                  as={BiHide}
-                  h={5}
-                  w={5}
-                  variant="unstyled"
-                  onClick={handleClick}
-                ></IconButton>
-              )}
-            </InputRightElement>
-          </InputGroup>
-          
-        </FormControl>
-        
-      </VStack>
-      <Flex mb={4} alignContent="center" pl={20} pr={20}>
-        <Checkbox isRequired size="lg" colorScheme="green">
-          <Text mt={1} fontSize="xs">
-            By creating an account, you agree to the terms of service and
-            conditions, and Privacy Policy
-          </Text>
-        </Checkbox>
-      </Flex>
-      <Button
-        type="submit"
-        alignSelf="center"
-        padding="10px"
-        background="#007ACC"
-        borderRadius="50px"
-        width="300px"
-        height="35px"
-        color="#ffffff"
-
-
+    <Flex
+      flexDirection="column"
+      width="100wh"
+      height="100vh"
+      backgroundColor="gray.200"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Stack
+        flexDir="column"
+        mb="2"
+        justifyContent="center"
+        alignItems="center"
       >
-        Sign Up
-      </Button>
-      <Text align="center" mt={4} fontSize="xs">
-        Already have an account?
-        <Box as="span" textColor="#007ACC" 
-        >
-          {" "}
-          Log in
+        <Avatar bg="teal.500" />
+        <Heading color="teal.400">Register</Heading>
+        <Box minW={{ base: "90%", md: "468px" }}>
+          <form>
+            <Stack
+              spacing={4}
+              p="1rem"
+              backgroundColor="whiteAlpha.900"
+              boxShadow="md"
+            >
+              <FormControl>
+                <InputGroup>
+                  <InputLeftElement
+                    pointerEvents="none"
+                    children={<CFaUserAlt color="gray.300" />}
+                  />
+                  <Input type="email" placeholder="Username" />
+                </InputGroup>
+              </FormControl>
+			  <FormControl>
+                <InputGroup>
+                  <InputLeftElement
+                    pointerEvents="none"
+                    children={<CFaUserAlt color="gray.300" />}
+                  />
+                  <Input type="email" placeholder="email address" />
+                </InputGroup>
+              </FormControl>
+			  <FormControl>
+                <InputGroup>
+                  <InputLeftElement
+                    pointerEvents="none"
+                    children={<CFaPhoneAltock color="gray.300" />}
+                  />
+                  <Input type="email" placeholder="Phone" />
+                </InputGroup>
+              </FormControl>
+              <FormControl>
+                <InputGroup>
+                  <InputLeftElement
+                    pointerEvents="none"
+                    color="gray.300"
+                    children={<CFaLock color="gray.300" />}
+                  />
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button h="1.75rem" size="sm" onClick={handleShowClick}>
+                      {showPassword ? "Hide" : "Show"}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+                <FormHelperText textAlign="right">
+                  <Link>forgot password?</Link>
+                </FormHelperText>
+              </FormControl>
+              <Button
+                borderRadius={0}
+                type="submit"
+                variant="solid"
+                colorScheme="teal"
+                width="full"
+              >
+                Register
+              </Button>
+            </Stack>
+          </form>
         </Box>
-      </Text>
+      </Stack>
+      <Box>
+        Already a member ?{" "}
+        <Link color="teal.500" href="#">
+          Login
+        </Link>
+      </Box>
     </Flex>
-    
   );
 };
 
 export default SignUp;
+
+
