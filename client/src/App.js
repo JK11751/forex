@@ -1,10 +1,10 @@
 import {BrowserRouter as Router , Routes ,Route} from 'react-router-dom';
 import Header from './components/PageComponents/Header';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Coins from './components/Currency/Coins';
 import CoinDetails from './components/Currency/CoinDetails';
 import Exchanges from './components/Currency/Exchanges.jsx';
-import Statistics from './pages/Statistics';
+import Statistics from './pages/Home/Statistics';
 import SignIn from './pages/Account/SignIn';
 import SignUp from './pages/Account/SignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
