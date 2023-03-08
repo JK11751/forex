@@ -1,44 +1,41 @@
 import {
   Box,
-  chakra,
   Flex,
   SimpleGrid,
   Stat,
   StatLabel,
   StatNumber,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { React} from 'react';
-import { BsPerson } from 'react-icons/bs';
-import { FiServer } from 'react-icons/fi';
-import { GoLocation } from 'react-icons/go';
+import { FaUsers } from 'react-icons/fa';
+import { RiLuggageDepositLine } from 'react-icons/ri';
+import { MdPublishedWithChanges} from 'react-icons/md';
 
 
 function StatsCard(props) {
   const { title, stat, icon } = props;
   return (
     <Stat
-      px={{ base: 2, md: 4 }}
-      py={'5'}
-      shadow={'xl'}
-      border={'1px solid'}
-      borderColor={useColorModeValue('gray.800', 'gray.500')}
-      rounded={'lg'}>
+      px={4}
+      borderLeftWidth={1}
+      borderLeftColor={"white"}
+      py={5}>
       <Flex justifyContent={'space-between'}>
-        <Box pl={{ base: 2, md: 4 }}>
-          <StatLabel fontWeight={'medium'} isTruncated>
-            {title}
-          </StatLabel>
-          <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
-            {stat}
-          </StatNumber>
-        </Box>
-        <Box
-          my={'auto'}
-          color={useColorModeValue('gray.800', 'gray.200')}
+      <Box
+          color={'white'}
           alignContent={'center'}>
           {icon}
         </Box>
+        <Box>
+        <StatNumber fontSize={'xl'} textColor={"white"} fontWeight={'medium'} pb={2}>
+            {stat}
+          </StatNumber>
+          <StatLabel fontWeight={'medium'} isTruncated textColor={"black"}>
+            {title}
+          </StatLabel>
+          
+        </Box>
+       
       </Flex>
     </Stat>
   );
@@ -46,29 +43,23 @@ function StatsCard(props) {
 
 const Statistics=()=> {
   return (
-    <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
-      <chakra.h1
-        textAlign={'center'}
-        fontSize={'4xl'}
-        py={10}
-        fontWeight={'bold'}>
-        Our company is expanding, you could be too.
-      </chakra.h1>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+    <Box  bgColor={"red.600"}  boxShadow={'sm'} borderWidth={1} >
+      <SimpleGrid columns={3} spacing={10}>
         <StatsCard
-          title={'Users'}
+          title={'Registered Users'}
           stat={'5,000'}
-          icon={<BsPerson size={'3em'} />}
+          icon={<FaUsers size={'3em'} />}
         />
         <StatsCard
-          title={'Servers'}
-          stat={'1,000'}
-          icon={<FiServer size={'3em'} />}
+          title={'Deposits'}
+          stat={'$150,245,820.00'}
+          icon={<RiLuggageDepositLine size={'3em'} />}
         />
+       
         <StatsCard
-          title={'Datacenters'}
-          stat={'7'}
-          icon={<GoLocation size={'3em'} />}
+          title={'Total Withdrawn'}
+          stat={'$188,420,397.00'}
+          icon={<MdPublishedWithChanges size={'3em'} />}
         />
       </SimpleGrid>
     </Box>

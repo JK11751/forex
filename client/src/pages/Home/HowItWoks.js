@@ -1,48 +1,51 @@
 import { React} from 'react';
-import { Box, SimpleGrid, Icon, Text, Stack, Flex } from '@chakra-ui/react';
-import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
+import { Box, SimpleGrid, Icon, Text, Stack, Flex, Heading } from '@chakra-ui/react';
+import { RiLuggageDepositLine} from 'react-icons/ri';
+import { MdManageAccounts } from 'react-icons/md';
+import { BiMoneyWithdraw } from 'react-icons/bi';
 
 
 const Feature = ({ title, text, icon }) => {
   return (
-    <Stack>
+    <Stack maxWidth={300} pl={10} >
       <Flex
         w={16}
         h={16}
         align={'center'}
         justify={'center'}
-        color={'white'}
-        rounded={'full'}
-        bg={'gray.100'}
+        color={'#fe6600'}
         mb={1}>
         {icon}
       </Flex>
-      <Text fontWeight={600}>{title}</Text>
-      <Text color={'gray.600'}>{text}</Text>
+      
+      <Text fontWeight={700} fontFamily={'sans-serif'} lineHeight={'40px'} fontSize={'28px'}  >{title}</Text>
+      <Text fontWeight={400} fontFamily={'sans-serif'} lineHeight={'28px'} fontSize={'15px'} color={'#3b3b3b'}>{text}</Text>
+
     </Stack>
   );
 };
 
 const HowItWorks=()=> {
   return (
-    <Box p={8} pl={20} >
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+    <Box pl={20} pt={20} >
+    <Heading lineHeight={1.42} fontFamily={"sans-serif"} fontSize={'50px'} fontWeight={700} pb={4} color={'#2d2d2d'} >How It Works</Heading>
+      <SimpleGrid columns={3 } spacing={10}>
         <Feature
-          icon={<Icon as={FcAssistant} w={10} h={10} />}
+          icon={<Icon as={MdManageAccounts} w={10} h={10} />}
           title={'CREATE YOUR ACCOUNT'}
           text={
             'Register a free account and start your first step to passive income.'
           }
         />
         <Feature
-          icon={<Icon as={FcDonate} w={10} h={10} />}
+          icon={<Icon as={RiLuggageDepositLine} w={10} h={10} />}
           title={'MAKE YOUR DEPOSIT'}
           text={
             'Invest your preferred amount and get a stable daily income.'
           }
         />
         <Feature
-          icon={<Icon as={FcInTransit} w={10} h={10} />}
+          icon={<Icon as={BiMoneyWithdraw} w={10} h={10} />}
           title={'WITHDRAW PROFITS'}
           text={
             'Withdraw your earnings whenever it is due'

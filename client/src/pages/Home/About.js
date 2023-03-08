@@ -5,45 +5,44 @@ import {
   Flex,
   Text,
   Stack,
-  useColorModeValue,
+  Heading,
+  Button,
 } from '@chakra-ui/react';
 
 import { React} from 'react';
-
+import images  from '../../constants/images'
 
 
 const About =()=> {
   return (
-    <Container maxW={'5xl'} py={12}>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Stack spacing={4}>
-          <Text
-            textTransform={'uppercase'}
-            color={'blue.400'}
-            fontWeight={600}
-            fontSize={'sm'}
-            bg={useColorModeValue('blue.50', 'blue.900')}
-            p={2}
-            alignSelf={'flex-start'}
-            rounded={'md'}>
-            Our Story
-          </Text>
-          <Text color={'gray.500'} fontSize={'lg'}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore
-          </Text>
-          
-        </Stack>
-        <Flex>
+    <Container maxW={'5xl'}  py={12} bg={"white"}>
+      <SimpleGrid columns={2} spacing={10}>
+      <Flex mr={20}>
           <Image
-            rounded={'md'}
-            alt={'feature image'}
-            src={
-              'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-            }
+            rounded={'sm'}
+            alt={'abou image'}
+            src={images.about}
             objectFit={'cover'}
           />
         </Flex>
+        <Stack spacing={4}>
+          <Heading
+            fontWeight={700}
+            fontSize={'38px'}
+            lineHeight={1.25}
+            fontFamily={"sans-serif"}
+            p={2}>
+           About Us
+          </Heading>
+          <Text  color={'#3b3b3b'} font-size={'15px'} fontWeight={400} lineHeight='28px' fontFamily={"sans-serif"}>
+          We provide the best Investment profitability return with our carefully prepared and time tested investment strategy.
+
+            We indulge in Cryptocurrency trading. Our trading team consists of highly qualified traders, analytical experts who by using their experience and are able to predict the movements in the market with best accuracy.
+
+             Global Trades Limited has achieved and occupied a stable position in the financial market and won the confidence of numerous investors from all over the world. Global Trades Limited aims to deliver a complete and professional service aimed at meeting the highest requirement of our clients. Our high standards can be verified by the increasing numbers of long-standing clients.
+          </Text>
+          <Button color={'white'} width={200} height={"60px"} bgColor={"#fe6600"} cursor={"pointer"} fontSize={'16px'} fontWeight={'700'} transition={"all 0.5s ease 0s"} borderRadius={'15px'} display={"inline-block"}>Get Started</Button>
+        </Stack>
       </SimpleGrid>
     </Container>
   );
