@@ -4,7 +4,6 @@ import Home from './pages/Home/Home';
 import Coins from './components/Currency/Coins';
 import CoinDetails from './components/Currency/CoinDetails';
 import Exchanges from './components/Currency/Exchanges.jsx';
-import Statistics from './pages/Home/Statistics';
 import SignIn from './pages/Account/SignIn';
 import SignUp from './pages/Account/SignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -15,12 +14,12 @@ import Contact from './pages/Contact/Contact';
 import Sidebar from './components/PageComponents/Sidebar';
 import Layout from './components/Layout/Layout';
 import Referral from './pages/Dashboard/Referrals';
-//import Content from './pages/Dashboard/History/Content';
 import DepositHistory from './pages/Dashboard/History/DepositHistory';
 import HIstoryLayout from './components/Layout/HistoryLayout';
 import WithdrawalHistory from './pages/Dashboard/History/WithdrawalHistory';
 import EarningHistory from './pages/Dashboard/History/EarningHistory';
 import { Box } from '@chakra-ui/react';
+import FAQPage from './pages/FAQPage'
 import GoogleTranslate from './components/PageComponents/Translation/GoogleTranslate';
 
 
@@ -39,7 +38,7 @@ function App() {
                 <Route path='/' element = {< Home />}/>
                 <Route path='/login' element = {< SignIn />}/>
                 <Route path='/register' element = {< SignUp/>}/>
-                <Route path='/stats' element = {< Statistics />}/>
+                <Route path='/faq' element = {<FAQPage/>}/>
                 <Route path='/coins' element = {<Coins />}/>
                 <Route path='/contact' element = {<Contact/>}/>
                 <Route path='/exchanges' element = {< Exchanges />}/>

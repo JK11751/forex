@@ -1,19 +1,11 @@
-import { Box, Button, Heading, HStack, VStack } from '@chakra-ui/react'
+import { Box, Button, Heading, HStack} from '@chakra-ui/react'
 import React from 'react'
-import {
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-} from '@chakra-ui/react'
-import { Select } from '@chakra-ui/react'
 const ProfitCalculator = () => {
   return (
     <Box
       width={'full'}
       h={'70vh'}
-      bgColor={'#fe6600;'}
+      bgColor={'#fe6600'}
       pl={20}
       pt={40}
     >
@@ -21,6 +13,7 @@ const ProfitCalculator = () => {
         <Heading
           color={'#ffffff'}
           marginBottom={'18px'}
+          textAlign={'start'}
           lineHeight={1.25}
           fontSize={'38px'}
           fontWeight={700}

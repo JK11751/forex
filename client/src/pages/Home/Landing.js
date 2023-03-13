@@ -15,6 +15,7 @@ const Landing = () => {
         <Text
           textColor={"#fe6600"}
           fontSize={"20px"}
+          align={"start"}
           fontWeight={700}
           letterSpacing={"0.8px"}
           pb={"10px"}
@@ -24,6 +25,7 @@ const Landing = () => {
         <Text
           textColor={"white"}
           fontSize={"60px"}
+          textAlign={'start'}
           lineHeight={"1.1"}
           fontWeight={700}
           pb={5}

@@ -16,11 +16,12 @@ import {
   InputRightElement
 } from "@chakra-ui/react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
 const SignIn = () => {
+  const navigate = useNavigate(); 
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowClick = () => setShowPassword(!showPassword);
@@ -30,7 +31,7 @@ const SignIn = () => {
       flexDirection="column"
       width="100wh"
       height="100vh"
-      backgroundColor="gray.200"
+      backgroundColor="white"
       justifyContent="center"
       alignItems="center"
     >
@@ -40,23 +41,23 @@ const SignIn = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Avatar bg="teal.500" />
-        <Heading color="teal.400">Welcome</Heading>
+        <Avatar bg="#fe6600" />
+        <Heading color="">Welcome</Heading>
         <Box minW={{ base: "90%", md: "468px" }}>
           <form>
             <Stack
               spacing={4}
               p="1rem"
-              backgroundColor="whiteAlpha.900"
+              backgroundColor="white"
               boxShadow="md"
             >
               <FormControl>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
-                    children={<CFaUserAlt color="gray.300" />}
+                    children={<CFaUserAlt color="#fe6600" />}
                   />
-                  <Input type="email" placeholder="email address" />
+                  <Input textAlign={'start'} type="email" placeholder="email address" />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -64,10 +65,11 @@ const SignIn = () => {
                   <InputLeftElement
                     pointerEvents="none"
                     color="gray.300"
-                    children={<CFaLock color="gray.300" />}
+                    children={<CFaLock color="#fe6600" />}
                   />
                   <Input
                     type={showPassword ? "text" : "password"}
+                    textAlign={'start'}
                     placeholder="Password"
                   />
                   <InputRightElement width="4.5rem">
@@ -83,8 +85,9 @@ const SignIn = () => {
               <Button
                 borderRadius={0}
                 type="submit"
+                textColor={'white'}
                 variant="solid"
-                colorScheme="teal"
+                bgColor={'#fe6600'}
                 width="full"
               >
                 Login
@@ -95,7 +98,9 @@ const SignIn = () => {
       </Stack>
       <Box>
         New to us?{" "}
-        <Link color="teal.500" href="#">
+        <Link color="#fe6600" onClick={() => {
+        navigate('/register')
+   }}>
           Sign Up
         </Link>
       </Box>

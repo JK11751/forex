@@ -12,18 +12,17 @@ import {
   Link,
   Avatar,
   FormControl,
-  FormHelperText,
   InputRightElement
 } from "@chakra-ui/react";
 import { FaUserAlt, FaLock,FaPhoneAlt } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 const CFaPhoneAltock = chakra(FaPhoneAlt);
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate(); 
   const handleShowClick = () => setShowPassword(!showPassword);
 
   return (
@@ -31,7 +30,7 @@ const SignUp = () => {
       flexDirection="column"
       width="100wh"
       height="100vh"
-      backgroundColor="gray.200"
+      backgroundColor="white"
       justifyContent="center"
       alignItems="center"
     >
@@ -41,41 +40,43 @@ const SignUp = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Avatar bg="teal.500" />
-        <Heading color="teal.400">Register</Heading>
+        <Avatar bg="#fe6600" />
+        <Heading color="#222222" fontSize={'38px'}
+    lineHeight={1.25} pb={4}>Register</Heading>
         <Box minW={{ base: "90%", md: "468px" }}>
           <form>
             <Stack
+             
               spacing={4}
               p="1rem"
               backgroundColor="whiteAlpha.900"
               boxShadow="md"
             >
-              <FormControl>
+              <FormControl >
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
-                    children={<CFaUserAlt color="gray.300" />}
+                    children={<CFaUserAlt color="#fe6600" />}
                   />
-                  <Input type="email" placeholder="Username" />
+                  <Input textAlign={'start'} type="email" placeholder="Username" />
                 </InputGroup>
               </FormControl>
 			  <FormControl>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
-                    children={<CFaUserAlt color="gray.300" />}
+                    children={<CFaUserAlt color="#fe6600" />}
                   />
-                  <Input type="email" placeholder="email address" />
+                  <Input textAlign={'start'} type="email" placeholder="email address" />
                 </InputGroup>
               </FormControl>
 			  <FormControl>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
-                    children={<CFaPhoneAltock color="gray.300" />}
+                    children={<CFaPhoneAltock color="#fe6600" />}
                   />
-                  <Input type="email" placeholder="Phone" />
+                  <Input textAlign={'start'} type="email" placeholder="Phone" />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -83,11 +84,12 @@ const SignUp = () => {
                   <InputLeftElement
                     pointerEvents="none"
                     color="gray.300"
-                    children={<CFaLock color="gray.300" />}
+                    children={<CFaLock color="#fe6600" />}
                   />
                   <Input
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
+                    textAlign={'start'}
                   />
                   <InputRightElement width="4.5rem">
                     <Button h="1.75rem" size="sm" onClick={handleShowClick}>
@@ -95,15 +97,13 @@ const SignUp = () => {
                     </Button>
                   </InputRightElement>
                 </InputGroup>
-                <FormHelperText textAlign="right">
-                  <Link>forgot password?</Link>
-                </FormHelperText>
               </FormControl>
               <Button
                 borderRadius={0}
                 type="submit"
+                textColor={'white'}
                 variant="solid"
-                colorScheme="teal"
+                bgColor="#fe6600"
                 width="full"
               >
                 Register
@@ -114,7 +114,9 @@ const SignUp = () => {
       </Stack>
       <Box>
         Already a member ?{" "}
-        <Link color="teal.500" href="#">
+        <Link color="#fe6600" href="#" onClick={() => {
+        navigate('/login')
+   }}>
           Login
         </Link>
       </Box>

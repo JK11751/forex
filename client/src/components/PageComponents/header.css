@@ -16,7 +16,10 @@
     
   }
   .btn:hover{
-    transition: all 500ms ease;
+    -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
     transform: scaleX(1.1);
     color: #fe6600;
     text-decoration: underline;
