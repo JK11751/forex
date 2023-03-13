@@ -17,8 +17,9 @@ import {
       <Box 
       maxW={{ base: 'full', md: '300px' }}
         w={'full'}
-        bgColor={'whiteAlpha.800'}
-        p={5}>
+        bgColor={'white'}
+        p={5}
+        mb={40}>
         <Stack align={'start'} spacing={2}>
           <Flex
             w={16}
@@ -42,8 +43,8 @@ import {
   
    const Choose=()=> {
     return (
-      <Box pl={20}>
-      <Heading fontSize={'38px'} color={"#2d2d2d"} fontWeight={700} fontFamily={"sans-serif"} lineHeight={1.25} align={"center"} mb={'15px'}>
+      <Box pl={20} pt={20} bgColor={'#f9f9f9'}>
+      <Heading fontSize={'50px'} pb={20} color={"#2d2d2d"} fontWeight={800} fontFamily={"sans-serif"} lineHeight={1.25} align={"center"} mb={'15px'}>
       Why Choose Us
         </Heading>
           <SimpleGrid columns={[1,2,3]} spacing='20px'  >

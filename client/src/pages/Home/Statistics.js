@@ -16,6 +16,7 @@ function StatsCard(props) {
   const { title, stat, icon } = props;
   return (
     <Stat
+     
       px={4}
       borderLeftWidth={1}
       borderLeftColor={"white"}
@@ -43,7 +44,7 @@ function StatsCard(props) {
 
 const Statistics=()=> {
   return (
-    <Box  bgColor={"red.600"}  boxShadow={'sm'} borderWidth={1} >
+    <Box  bgColor={"#fe6600"} mb={20} boxShadow={'sm'} borderWidth={1} >
       <SimpleGrid columns={3} spacing={10}>
         <StatsCard
           title={'Registered Users'}

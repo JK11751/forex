@@ -1,129 +1,120 @@
-import { HStack ,Button, Stack ,Image, Text } from "@chakra-ui/react";
-import React from "react";
-import { Link, NavLink,  } from "react-router-dom";
-import headerLogo from '../../assets/headerLogo3.png'
+import { HStack, Button, Stack, Image, Text } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import headerLogo from "../../assets/headerLogo3.png";
+import "./header.css";
 
+const Header = () => {
+  const [sticky, setSticky] = useState("");
 
-const Header =()=>{
+  // on render, set listener
+  useEffect(() => {
+    console.log("hello");
+    window.addEventListener("scroll", isSticky);
+    return () => {
+      window.removeEventListener("scroll", isSticky);
+    };
+  }, []);
 
-    return(
-        <>
+  const isSticky = () => {
+    /* Method that will fix header after a specific scrollable */
+    const scrollTop = window.scrollY;
+    const stickyClass = scrollTop >= 250 ? "is-sticky" : "";
+    setSticky(stickyClass);
+    console.log(stickyClass);
+  };
 
-       
-        <Stack p={'3'} bg={'transparent'} shadow={'base'}  flexDirection={'row'}  justifyContent={'space-around'} >
+  const classes = `header-section d-none d-xl-block ${sticky}`;
 
-        <HStack color={'black'} textTransform={'capitalize'} letterSpacing={'wider'} alignSelf ={'flex-end'} w={'sm'}  >
-            <Button variant={'unstyled'} color={'black'}   display={'flex'} flexDirection={'row'}  >
-                <NavLink to={"/"} >
-                <Image  src={headerLogo} mr={'1'} /> 
-                    </ NavLink >
-                   <NavLink to={"/"} >
-                    <Text color={'rgb(252,211,76)'} >
-                        cryptoRank
-                        </Text> 
-                    </NavLink>
-            </Button>
+  return (
+    <>
+      <Stack
+        className={classes}
+        boxShadow={"md"}
+        pt={"3"}
+        pb={"3"}
+        w="100%"
+        bg={"white"}
+        flexDirection={"row"}
+        justifyContent={"space-around"}
+      >
+        <HStack
+          textTransform={"capitalize"}
+          letterSpacing={"wider"}
+          alignSelf={"flex-end"}
+          w={"md"}
+        >
+          <Button variant={"unstyled"} display={"flex"} pl={10} flexDirection={"row"}>
+            <NavLink to={"/"}>
+              <Image src={headerLogo} mr={"1"} />
+            </NavLink>
+            <NavLink to={"/"}>
+              <Text color={"rgb(252,211,76)"}>cryptoRank</Text>
+            </NavLink>
+          </Button>
         </HStack>
 
-        <HStack justifyContent={'space-around'} 
-         transition ={"all 0.3s"} 
+        <HStack spacing={'40px'} pr={20}>
+          <Button className="btn"
+            variant={"unstyled"}
+            
           >
-
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} mr={'1'} transition ={"all 0.1s"} css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-              textDecoration: "underline",
-              textDecorationColor: "red"
-            }
-          }} >
-                <Link to="/" >Home</Link>
-            </Button>
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-              textDecoration: "underline",
-              textDecorationColor: "red"
-            }
-          }}>
-                <Link to='/about'>About </Link>
-            </Button>
-
-            
-
-            
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-              textDecoration: "underline",
-              textDecorationColor: "red"
-            }
-          }}>
-                <Link to='/faq'>Faq</Link>
-            </Button>
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-              textDecoration: "underline",
-              textDecorationColor: "red"
-            }
-          }}>
-                <Link to='/contact'>Contact-Us</Link>
-            </Button>
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-              textDecoration: "underline",
-              textDecorationColor: "red"
-            }
-          }}>
-                <Link to='/privacy'>Privacy Policy</Link>
-            </Button>
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-              textDecoration: "underline",
-              textDecorationColor: "red",
-              
-            }
-          }}>
-                <Link to='/exchanges'>Exchanges</Link>
-            </Button>
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"} css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-              textDecoration: "underline",
-              textDecorationColor: "red",
-            }
-          }}>
-                <Link to='/coins'>Coins</Link>
-            </Button>
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-              textDecoration: "underline",
-              textDecorationColor: "red"
-            }
-          }}>
-                <Link to='/login'>Login</Link>
-            </Button>
-            <Button variant={'unstyled'} color={'rgb(252,211,76)'} pl={'4' } transition ={"all 0.1s"}  css={{
-            "&:hover":{
-              transform :"scale(1.1)",
-              textDecoration: "underline",
-              textDecorationColor: "red",
-            }
-          }}>
-                <Link to='/register'>Register</Link>
-            </Button>
+            <Link to="/">Home</Link>
+          </Button>
+          <Button className="btn"
+            variant={"unstyled"}
            
+          >
+            <Link to="/about">About </Link>
+          </Button>
+
+          <Button
+            variant={"unstyled"}
+            className="btn"
+          >
+            <Link to="/faq">Faq</Link>
+          </Button>
+          <Button
+            variant={"unstyled"}
+            className="btn"
+          >
+            <Link to="/contact">Contact-Us</Link>
+          </Button>
+          <Button
+            variant={"unstyled"}
+            className="btn"
+          >
+            <Link to="/privacy">Privacy Policy</Link>
+          </Button>
+          <Button
+            variant={"unstyled"}
+            className="btn"
+          >
+            <Link to="/exchanges">Exchanges</Link>
+          </Button>
+          <Button
+            variant={"unstyled"}
+            className="btn"
+            
+          >
+            <Link to="/coins">Coins</Link>
+          </Button>
+          <Button
+            variant={"unstyled"}
+            className="btn"
+          >
+            <Link to="/login">Login</Link>
+          </Button>
+          <Button
+            variant={"unstyled"}
+            className="btn"
+          >
+            <Link to="/register">Register</Link>
+          </Button>
         </HStack>
-
-        </Stack>
-
-        </>
-    )
-}
-
+      </Stack>
+    </>
+  );
+};
 
 export default Header;
-

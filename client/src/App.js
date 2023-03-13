@@ -20,6 +20,7 @@ import DepositHistory from './pages/Dashboard/History/DepositHistory';
 import HIstoryLayout from './components/Layout/HistoryLayout';
 import WithdrawalHistory from './pages/Dashboard/History/WithdrawalHistory';
 import EarningHistory from './pages/Dashboard/History/EarningHistory';
+import { Box } from '@chakra-ui/react';
 
 
 
@@ -27,7 +28,7 @@ import EarningHistory from './pages/Dashboard/History/EarningHistory';
 
 function App() {
   return (
-    <div className="App">
+    <Box>
       <Router>
 
           <Header />
@@ -64,7 +65,7 @@ function App() {
               </Routes>
               
           </Router>
-    </div>
+    </Box>
   );
 }
 

@@ -1,0 +1,27 @@
+.is-sticky {
+    position: fixed;
+    z-index: 999;
+    background-color:white !important;
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    padding-top: 3px;
+    box-shadow: inset;
+    width: 100%;
+    background-color:white;
+    flex-direction: row ;
+    justify-content:space-around;
+  }
+  .btn {
+     text-decoration: none;
+      color: black;
+    
+  }
+  .btn:hover{
+    transition: all 500ms ease;
+    transform: scaleX(1.1);
+    color: #fe6600;
+    text-decoration: underline;
+    text-decoration-thickness: 6px;
+    text-decoration-color: #fe6600;
+    text-underline-position: under;
+    text-underline-offset: 18px;
+  }

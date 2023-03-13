@@ -1,203 +1,61 @@
-import { React } from 'react';
 import {
   Box,
-  Stack,
-  HStack,
   Heading,
-  Text,
-  VStack,
-  useColorModeValue,
-  List,
-  ListItem,
-  ListIcon,
-  Button,
+  SimpleGrid,
+    VStack,
+    Text,
+    Divider,
+    Button,
 } from '@chakra-ui/react';
-import { FaCheckCircle } from 'react-icons/fa';
+import PlanCard from '../../Cards/PlanCard';
+import { plandata } from '../../constants/PlansList';
 
-const PriceWrapper=({ children })=>{
+ const Investiment=()=> {
   return (
-    <Box
-      mb={4}
-      shadow="base"
-      borderWidth="1px"
-      alignSelf={{ base: 'center', lg: 'flex-start' }}
-      borderColor={useColorModeValue('gray.200', 'gray.500')}
-      borderRadius={'xl'}>
-      {children}
+    <Box bgColor={'#212529'} pb={40}>
+    <Box pl={10} pt={20}  alignItems={'center'} pr={10} mb={20} >
+    <Heading fontSize={'50px'} pb={40} color={'white'} fontWeight={800} fontFamily={"sans-serif"} lineHeight={1.25} align={"center"} mb={'15px'}>
+    Investiment Plans
+      </Heading>
+        <SimpleGrid columns={[1,2,3,4]} spacing='20px'  >
+        {plandata.map(plan => {
+        return <PlanCard key={plan.id} {...plan} />;
+      })}
+        </SimpleGrid>
     </Box>
-  );
-}
-
-const  Investment=()=>{
-  return (
-    <Box py={12}>
-      <VStack spacing={2} textAlign="center">
-        <Heading as="h1" fontSize="4xl">
-          Investiment Plans
-        </Heading>
+    <Box bgColor={'white'} 
+    pb={40}
+    ml={10}
+    mr={10}
+     borderWidth={1}>
+      <VStack >
+      <Heading width={'full'}  fontFamily={"sans-serif"} textColor={'white'} textAlign={'center'} pt={'60px'}  bgColor={"#fe6600"} fontSize={'28px'}
+         lineHeight={'40px'}
+         h={40}
+          mb={'15px'} fontWeight={'700'} 
+          >
+          Promo Package
+          </Heading>
+      <Text fontSize={'20px'} fontWeight={700} color={'#2d2d2d'}
+    lineHeight={1.1}
+    fontFamily={'sans-serif'} >40.5% profit in 24 hours</Text>
+      <Divider/>
+  <Text color={'#747474'} fontSize={'15px'} textColor={'#747474'} fontWeight={400} lineHeight={'28px'}
+        fontFamily ={'sans-serif'}>Minimum Amount : $1,100</Text>
+      <Divider/>
+      <Text color={'#747474'} fontSize={'15px'} textColor={'#747474'} fontWeight={400} lineHeight={'28px'}
+        fontFamily ={'sans-serif'}>Maximum Amount : Unlimted</Text>
+      <Divider/>
+      <Text color={'#747474'} fontSize={'15px'} textColor={'#747474'} fontWeight={400} lineHeight={'28px'}
+        fontFamily ={'sans-serif'}>5% Referral Bonus</Text>
+      <Divider/>
+      <Text color={'#747474'} fontSize={'15px'} textColor={'#747474'} fontWeight={400} lineHeight={'28px'}
+        fontFamily ={'sans-serif'}>Reinvestment unlimited</Text>
+        <Divider/>
+      <Button color={'white'}  width={200} height={"60px"} bgColor={"#fe6600"} cursor={"pointer"} fontSize={'16px'} fontWeight={'700'} transition={"all 0.5s ease 0s"} borderRadius={'15px'} display={"inline-block"}>Get Started</Button>
       </VStack>
-      <Stack
-        direction={{ base: 'column', md: 'row' }}
-        textAlign="center"
-        justify="center"
-        spacing={{ base: 4, lg: 10 }}
-        py={10}>
-        <PriceWrapper>
-          <Box py={4} px={12}>
-            <Text fontWeight="500" textColor={"white"} fontSize="2xl" bgColor={'red'} borderRadius={'md'}>
-              Hobby
-            </Text>
-            <HStack justifyContent="center">
-              <Text fontSize="3xl" fontWeight="600">
-                $
-              </Text>
-              <Text fontSize="5xl" fontWeight="900">
-                79
-              </Text>
-              <Text fontSize="3xl" color="gray.500">
-                /month
-              </Text>
-            </HStack>
-          </Box>
-          <VStack
-            bg={useColorModeValue('gray.50', 'gray.700')}
-            py={4}
-            borderBottomRadius={'xl'}>
-            <List spacing={3} textAlign="start" px={12}>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                unlimited build minutes
-              </ListItem>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                Lorem, ipsum dolor.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                5TB Lorem, ipsum dolor.
-              </ListItem>
-            </List>
-            <Box w="80%" pt={7}>
-              <Button w="full" colorScheme="red" variant="outline">
-              Get Started
-              </Button>
-            </Box>
-          </VStack>
-        </PriceWrapper>
-
-        <PriceWrapper>
-          <Box position="relative">
-            <Box
-              position="absolute"
-              top="-16px"
-              left="50%"
-              style={{ transform: 'translate(-50%)' }}>
-              <Text
-                textTransform="uppercase"
-                bg={useColorModeValue('red.300', 'red.700')}
-                px={3}
-                py={1}
-                color={useColorModeValue('gray.900', 'gray.300')}
-                fontSize="sm"
-                fontWeight="600"
-                rounded="xl">
-                Most Popular
-              </Text>
-            </Box>
-            <Box py={4} px={12}>
-              <Text fontWeight="500" textColor={"white"} fontSize="2xl" bgColor={'red'} borderRadius={'md'}>
-                Growth
-              </Text>
-              <HStack justifyContent="center">
-                <Text fontSize="3xl" fontWeight="600">
-                  $
-                </Text>
-                <Text fontSize="5xl" fontWeight="900">
-                  149
-                </Text>
-                <Text fontSize="3xl" color="gray.500">
-                  /month
-                </Text>
-              </HStack>
-            </Box>
-            <VStack
-              bg={useColorModeValue('gray.50', 'gray.700')}
-              py={4}
-              borderBottomRadius={'xl'}>
-              <List spacing={3} textAlign="start" px={12}>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  unlimited build minutes
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  Lorem, ipsum dolor.
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
-                </ListItem>
-              </List>
-              <Box w="80%" pt={7}>
-                <Button w="full" colorScheme="red">
-                  Get Started
-                </Button>
-              </Box>
-            </VStack>
-          </Box>
-        </PriceWrapper>
-        <PriceWrapper>
-          <Box py={4} px={12}>
-            <Text fontWeight="500" textColor={"white"} fontSize="2xl" bgColor={'red'} borderRadius={'md'}>
-              Scale
-            </Text>
-            <HStack justifyContent="center">
-              <Text fontSize="3xl" fontWeight="600">
-                $
-              </Text>
-              <Text fontSize="5xl" fontWeight="900">
-                349
-              </Text>
-              <Text fontSize="3xl" color="gray.500">
-                /month
-              </Text>
-            </HStack>
-          </Box>
-          <VStack
-            bg={useColorModeValue('gray.50', 'gray.700')}
-            py={4}
-            borderBottomRadius={'xl'}>
-            <List spacing={3} textAlign="start" px={12}>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                unlimited build minutes
-              </ListItem>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                Lorem, ipsum dolor.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                5TB Lorem, ipsum dolor.
-              </ListItem>
-            </List>
-            <Box w="80%" pt={7}>
-              <Button w="full" colorScheme="red" variant="outline">
-              Get Started
-              </Button>
-            </Box>
-          </VStack>
-        </PriceWrapper>
-      </Stack>
+    </Box>
     </Box>
   );
 }
-export default Investment;
+export default Investiment;

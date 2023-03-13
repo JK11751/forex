@@ -7,7 +7,7 @@ import { BiMoneyWithdraw } from 'react-icons/bi';
 
 const Feature = ({ title, text, icon }) => {
   return (
-    <Stack maxWidth={300} pl={10} >
+    <Stack maxWidth={300} pl={10} mb={60} >
       <Flex
         w={16}
         h={16}

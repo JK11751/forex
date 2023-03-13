@@ -3,30 +3,33 @@ import React from "react";
 import About from './About'
 import Investment from "./Investment";
 import Statistics from "./Statistics";
-import Testimonials from "./Testimonial/Testimonials";
 import Landing from "./Landing";
 import Choose from "./Choose";
 import HowItWorks from "./HowItWoks";
+import Footer from '../Home/Footer'
+import ProfitCalculator from '../Home/ProfitCalculator/ProfitCalculator'
 
 const Home = ()=>{
     return(
-        
-        <Box >
+        <Box>
         <Landing/>
-        <Box pb={10}>
+        <Box>
         <Statistics/>
         </Box>
         <About/>
-        <Box bg={'#f9f9f9'} pb={8}>
+        <Box>
         <Choose/>
         </Box>
         <Box >
         <HowItWorks/>
         </Box>
         <Investment/>
+        <ProfitCalculator/>
+        <Footer/>
         
-        <Testimonials/>
+
         </Box>
+        
     )
 }
 
