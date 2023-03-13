@@ -7,7 +7,7 @@ import Landing from "./Landing";
 import Choose from "./Choose";
 import HowItWorks from "./HowItWoks";
 import Footer from '../Home/Footer'
-import ProfitCalculator from '../Home/ProfitCalculator/ProfitCalculator'
+import ProfitCalculator from '../Home/ProfitCalculator/ProfitCalculator';
 
 const Home = ()=>{
     return(

@@ -21,6 +21,7 @@ import HIstoryLayout from './components/Layout/HistoryLayout';
 import WithdrawalHistory from './pages/Dashboard/History/WithdrawalHistory';
 import EarningHistory from './pages/Dashboard/History/EarningHistory';
 import { Box } from '@chakra-ui/react';
+import GoogleTranslate from './components/PageComponents/Translation/GoogleTranslate';
 
 
 
@@ -30,7 +31,7 @@ function App() {
   return (
     <Box>
       <Router>
-
+        <GoogleTranslate/>
           <Header />
            
               <Routes>
